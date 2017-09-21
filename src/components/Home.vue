@@ -1,5 +1,6 @@
 <template>
     <div class="container">
+        <h1>{{ title }}</h1>
         <ul>
             <serie></serie>
             <serie></serie>
@@ -15,7 +16,7 @@ import Serie from '@/components/Serie.vue'
 export default {
     data() {
         return {
-            helloWorld: 'Hello World !'
+            title: 'Listes des séries'
         }
     },
     components: {
