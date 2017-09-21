@@ -12,6 +12,7 @@
 
 <script>
 import Serie from '@/components/Serie.vue'
+import seriesService from '@/services/series.service'
 
 export default {
     data() {
@@ -21,6 +22,9 @@ export default {
     },
     components: {
         serie: Serie
+    },
+    created() {
+        seriesService.getSeries().then(response => console.log(response.data))
     }
 }
 </script>
