@@ -1,6 +1,6 @@
 <template>
     <div>
-        {{ helloWorld }}
+        <h1>{{ title }}</h1> 
     </div>
 </template>
 
@@ -8,7 +8,7 @@
 export default {
     data() {
         return {
-            helloWorld: 'Hello World !'
+            title: 'Liste des séries'
         }
     }
 }
