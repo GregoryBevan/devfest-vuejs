@@ -23,7 +23,7 @@ export default {
     components: {
         serie: Serie
     },
-    created() {
+    mounted() {
         seriesService.getSeries().then(response => console.log(response.data))
     }
 }
