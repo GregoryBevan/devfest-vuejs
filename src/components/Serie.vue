@@ -1,12 +1,12 @@
 <template>
     <li class="list-group-item">
         <div class="media">
-            <div class="media-left">
-                <img class="media-object" :src="image.medium" />
+            <div class="media-left" v-if="serieDetails && serieDetails.image">
+                <img class="media-object" :src="serieDetails.image.medium" />
             </div>
             <div class="media-body">
-                <h4 class="media-heading">{{ name }}</h4>
-                <div>{{ summary }}</div>
+                <h4 class="media-heading">{{ serieDetails.name }}</h4>
+                <div v-html="serieDetails.summary"></div>
             </div>
         </div>
     </li>
@@ -14,15 +14,9 @@
 
 <script>
 export default {
-    data() {
-        return {
-            name: 'NightClazz',
-            summary: 'What an amazing codelab …',
-            image: {
-                medium: 'static/logo.png'
-            }
-        }
-    }
+    props: [
+        'serieDetails'
+    ]
 }
 </script>
 
