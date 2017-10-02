@@ -2,7 +2,7 @@
     <div class="container">
         <h1>{{ title }}</h1>
         <ul>
-            <serie v-for="serie in series" :key="serie.id" :serie-details="serie"></serie>
+            <serie v-for="serie in series" :key="serie.id" :serie-details="serie" @clicked="toggleFavorites($event)"></serie>
         </ul>
     </div>
 </template>
@@ -10,6 +10,7 @@
 <script>
 import Serie from '@/components/Serie.vue'
 import seriesService from '@/services/series.service'
+import favoritesService from '@/services/favorites.service'
 
 export default {
     data() {
@@ -23,6 +24,11 @@ export default {
     },
     mounted() {
         seriesService.getSeries().then(response => (this.series = response.data.map(item => item.show)))
+    },
+    methods: {
+        toggleFavorites: function(serie) {
+            !favoritesService.list.find(item => item.id === serie.id) ? favoritesService.addFavorite(serie) : favoritesService.removeFavorite(serie)
+        }
     }
 }
 </script>
