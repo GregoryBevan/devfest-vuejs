@@ -1,15 +1,31 @@
 <template>
-  <div>
-      Favorites
+  <div class="container">
+    <h1>{{ title }}</h1>
+    <ul>
+      <serie v-for="favorite in favorites" :key="favorite.id" :serieDetails="favorite"></serie>
+    </ul>
   </div>
 </template>
 
 <script>
-export default {
+import Serie from '@/components/Serie'
+import favoritesService from '@/services/favorites.service'
 
+export default {
+  data () {
+    return {
+      title: 'Vos favoris',
+      favorites: []
+    }
+  },
+  mounted () {
+    this.favorites = favoritesService.list
+  },
+  components: {
+    serie: Serie
+  }
 }
 </script>
 
-<style>
-
+<style scoped>
 </style>
