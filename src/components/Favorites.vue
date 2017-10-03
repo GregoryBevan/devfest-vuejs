@@ -1,6 +1,6 @@
 <template>
   <div class="container">
-    <h1>Favoris</h1>
+    <h1>{{ title }}</h1>
     <ul class="list-group">
       <serie v-for="favorite in favorites" :key="favorite.id" :serieDetails="favorite"></serie>
     </ul>
@@ -17,6 +17,7 @@ export default {
   },
   data() {
     return {
+      title: 'Vos favoris',
       favorites: []
     }
   },
@@ -26,6 +27,5 @@ export default {
 }
 </script>
 
-<style>
-
+<style scoped>
 </style>
