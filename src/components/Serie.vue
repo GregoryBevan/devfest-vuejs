@@ -1,7 +1,7 @@
 <template>
     <li class="list-group-item">
         <div class="media">
-            <div class="media-left" v-if="serieDetails && serieDetails.image">
+            <div class="media-left" v-if="serieDetails.image">
                 <img class="media-object" :src="serieDetails.image.medium" />
             </div>
             <div class="media-body">

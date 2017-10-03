@@ -14,7 +14,7 @@ import seriesService from '@/services/series.service'
 export default {
     data() {
         return {
-            title: 'Listes des séries',
+            title: 'Liste des séries',
             series: []
         }
     },
