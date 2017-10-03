@@ -12,16 +12,16 @@ import Serie from '@/components/Serie.vue'
 import seriesService from '@/services/series.service'
 
 export default {
-    data() {
+    components: {
+        Serie
+    },
+    data () {
         return {
             title: 'Liste des séries',
             series: []
         }
     },
-    components: {
-        serie: Serie
-    },
-    mounted() {
+    mounted () {
         seriesService.getSeries().then(response => (this.series = response.data.map(item => item.show)))
     }
 }
