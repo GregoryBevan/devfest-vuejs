@@ -14,7 +14,7 @@
 
 <script>
 export default {
-    data() {
+    data () {
         return {
             name: 'NightClazz',
             summary: 'What an amazing codelab …',

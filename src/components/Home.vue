@@ -15,16 +15,16 @@ import Serie from '@/components/Serie.vue'
 import seriesService from '@/services/series.service'
 
 export default {
-    data() {
+    components: {
+        Serie
+    },
+    data () {
         return {
-            title: 'Listes des séries'
+            title: 'Liste des séries'
         }
     },
-    components: {
-        serie: Serie
-    },
-    mounted() {
-        seriesService.getSeries().then(response => console.log(response.data))
+    mounted () {
+        seriesService.getSeries().then(response => console.log(response.data.map(item => item.show)))
     }
 }
 </script>
