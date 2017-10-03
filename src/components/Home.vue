@@ -13,14 +13,14 @@ import seriesService from '@/services/series.service'
 import favoritesService from '@/services/favorites.service'
 
 export default {
+    components: {
+        Serie
+    },
     data () {
         return {
             title: 'Liste des séries',
             series: []
         }
-    },
-    components: {
-        serie: Serie
     },
     mounted () {
         seriesService.getSeries().then(response => (this.series = response.data.map(item => item.show)))

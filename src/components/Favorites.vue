@@ -1,6 +1,6 @@
 <template>
   <div class="container">
-    <h1>{{ title }}</h1>
+    <h1>Favoris</h1>
     <ul>
       <serie v-for="favorite in favorites" :key="favorite.id" :serieDetails="favorite"></serie>
     </ul>
@@ -12,18 +12,17 @@ import Serie from '@/components/Serie'
 import favoritesService from '@/services/favorites.service'
 
 export default {
+  components: {
+    Serie
+  },
   data () {
     return {
-      title: 'Vos favoris',
       favorites: []
     }
   },
   mounted () {
     this.favorites = favoritesService.favorites
   },
-  components: {
-    serie: Serie
-  }
 }
 </script>
 
