@@ -6,7 +6,7 @@
 
 <script>
 export default {
-    data() {
+    data () {
         return {
             title: 'Liste des séries'
         }
