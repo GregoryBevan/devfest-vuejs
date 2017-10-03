@@ -1,6 +1,6 @@
 <template>
     <li class="list-group-item" @click="onClick()">
-        <i class="glyphicon"></i>
+        <i class="glyphicon" :class="[isFav ? 'glyphicon-star' : 'glyphicon-star-empty']"></i>
         <div class="media">
             <div class="media-left" v-if="serieDetails.image">
                 <img class="media-object" :src="serieDetails.image.medium" />
@@ -20,9 +20,19 @@ export default {
     props: [
         'serieDetails'
     ],
+    data() {
+        return {
+            favorites: favoritesService.favorites
+        }
+    },
     methods: {
         onClick () {
             this.$emit('clicked', this.serieDetails)
+        }
+    },
+    computed: {
+        isFav: function() {
+            return this.favorites.find(item => item.id === this.serieDetails.id)
         }
     }
 }
