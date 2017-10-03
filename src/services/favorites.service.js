@@ -12,7 +12,8 @@ export default {
 	 * Remove a serie from favorites
 	 */
 	removeFavorite (serie) {
-		this.favorites = this.favorites.filter(item => item.id !== serie.id)
+		const favIndex = this.favorites.findIndex(item => item.id === serie.id) 
+		this.favorites.splice(favIndex, 1) 
 	},
 
 	/**
