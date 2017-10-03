@@ -1,7 +1,8 @@
 <template>
     <li class="list-group-item" @click="onClick()">
+        <i class="glyphicon"></i>
         <div class="media">
-            <div class="media-left" v-if="serieDetails && serieDetails.image">
+            <div class="media-left" v-if="serieDetails.image">
                 <img class="media-object" :src="serieDetails.image.medium" />
             </div>
             <div class="media-body">
@@ -13,12 +14,14 @@
 </template>
 
 <script>
+import favoritesService from '@/services/favorites.service'
+
 export default {
     props: [
         'serieDetails'
     ],
     methods: {
-        onClick: function() {
+        onClick () {
             this.$emit('clicked', this.serieDetails)
         }
     }
@@ -26,6 +29,10 @@ export default {
 </script>
 
 <style>
+.glyphicon {
+    float: right;
+}
+
 .list-group-item {
     position: relative
 }

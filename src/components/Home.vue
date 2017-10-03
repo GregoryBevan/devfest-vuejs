@@ -13,21 +13,21 @@ import seriesService from '@/services/series.service'
 import favoritesService from '@/services/favorites.service'
 
 export default {
-    data() {
+    data () {
         return {
-            title: 'Listes des séries',
+            title: 'Liste des séries',
             series: []
         }
     },
     components: {
         serie: Serie
     },
-    mounted() {
+    mounted () {
         seriesService.getSeries().then(response => (this.series = response.data.map(item => item.show)))
     },
     methods: {
-        toggleFavorites: function(serie) {
-            !favoritesService.list.find(item => item.id === serie.id) ? favoritesService.addFavorite(serie) : favoritesService.removeFavorite(serie)
+        toggleFavorites (serie) {
+            favoritesService.isFavorite(serie) ? favoritesService.removeFavorite(serie) : favoritesService.addFavorite(serie) 
         }
     }
 }

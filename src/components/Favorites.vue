@@ -19,7 +19,7 @@ export default {
     }
   },
   mounted () {
-    this.favorites = favoritesService.list
+    this.favorites = favoritesService.favorites
   },
   components: {
     serie: Serie
