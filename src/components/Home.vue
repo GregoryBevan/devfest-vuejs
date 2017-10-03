@@ -14,7 +14,7 @@
 import Serie from '@/components/Serie.vue'
 
 export default {
-    data() {
+    data () {
         return {
             title: 'Listes des séries'
         }
