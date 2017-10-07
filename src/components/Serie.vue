@@ -22,7 +22,7 @@ export default {
     ],
     data() {
         return {
-            favorites: favoritesService.favorites
+            favoritesService
         }
     },
     methods: {
@@ -31,8 +31,8 @@ export default {
         }
     },
     computed: {
-        isFav: function() {
-            return this.favorites.find(item => item.id === this.serieDetails.id)
+        isFav() {
+            return this.favoritesService.isFavorite(this.serieDetails)
         }
     }
 }
