@@ -16,7 +16,7 @@
 export default {
     data () {
         return {
-            name: 'NightClazz',
+            name: 'Vue.js @ Devfest',
             summary: 'What an amazing codelab …',
             image: {
                 medium: 'static/logo.png'
