@@ -1,6 +1,8 @@
 <template>
     <div class="container">
         <h1>{{ title }}</h1>
+        <div id="search">
+        </div>
         <ul>
             <serie v-for="serie in series" :key="serie.id" :serie-details="serie" @clicked="toggleFavorites($event)"></serie>
         </ul>
@@ -33,6 +35,11 @@ export default {
 }
 </script>
 
-<style>
-
+<style scoped>
+#search {
+    padding-bottom: 15px;
+}
+ul {
+    -webkit-padding-start: 0px;
+}
 </style>
