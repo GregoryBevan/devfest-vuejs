@@ -1,6 +1,6 @@
 <template>
-    <div class="container">
-        <h1>{{ title }}</h1>
+    <div>
+        <h1>Liste des séries</h1> 
         <ul>
             <serie></serie>
             <serie></serie>
@@ -14,13 +14,8 @@
 import Serie from '@/components/Serie.vue'
 
 export default {
-    data () {
-        return {
-            title: 'Listes des séries'
-        }
-    },
     components: {
-        serie: Serie
+        Serie
     }
 }
 </script>
