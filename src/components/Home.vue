@@ -1,6 +1,6 @@
 <template>
-    <div class="container">
-        <h1>{{ title }}</h1>
+    <div>
+        <h1>Liste des séries</h1> 
         <div id="search">
             <input type="text" v-model="search" class="form-control" placeholder="Filtrer...">
         </div>
@@ -19,13 +19,12 @@ export default {
     components: {
         Serie
     },
-    data () {
-        return {
-            title: 'Liste des séries',
+    data () { 
+        return { 
             series: [],
             search: ''
-        }
-    },
+        } 
+    }, 
     mounted () {
         seriesService.getSeries().then(response => (this.series = response.map(item => item.show)))
     },
