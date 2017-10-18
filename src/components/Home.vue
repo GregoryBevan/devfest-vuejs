@@ -24,7 +24,7 @@ export default {
         }
     },
     mounted () {
-        seriesService.getSeries().then(response => console.log(response.data.map(item => item.show)))
+        seriesService.getSeries().then(res => console.log(res.map(item => item.show)))
     }
 }
 </script>
