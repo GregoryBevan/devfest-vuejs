@@ -27,7 +27,7 @@ export default {
         }
     },
     mounted () {
-        seriesService.getSeries().then(response => (this.series = response.data.map(item => item.show)))
+        seriesService.getSeries().then(response => (this.series = response.map(item => item.show)))
     },
     methods: {
         toggleFavorites (serie) {
