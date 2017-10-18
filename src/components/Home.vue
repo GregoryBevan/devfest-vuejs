@@ -1,6 +1,6 @@
 <template>
-    <div class="container">
-        <h1>{{ title }}</h1>
+    <div>
+        <h1>Liste des séries</h1> 
         <ul>
             <serie></serie>
             <serie></serie>
@@ -17,11 +17,6 @@ import seriesService from '@/services/series.service'
 export default {
     components: {
         Serie
-    },
-    data () {
-        return {
-            title: 'Liste des séries'
-        }
     },
     mounted () {
         seriesService.getSeries().then(res => console.log(res.map(item => item.show)))
