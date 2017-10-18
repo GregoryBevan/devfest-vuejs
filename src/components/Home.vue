@@ -1,6 +1,6 @@
 <template>
-    <div class="container">
-        <h1>{{ title }}</h1>
+    <div>
+        <h1>Liste des séries</h1> 
         <ul>
             <serie v-for="serie in series" :key="serie.id" :serie-details="serie" @clicked="toggleFavorites($event)"></serie>
         </ul>
@@ -16,12 +16,11 @@ export default {
     components: {
         Serie
     },
-    data () {
-        return {
-            title: 'Liste des séries',
-            series: []
-        }
-    },
+    data () { 
+        return { 
+            series: [] 
+        } 
+    }, 
     mounted () {
         seriesService.getSeries().then(response => (this.series = response.map(item => item.show)))
     },
