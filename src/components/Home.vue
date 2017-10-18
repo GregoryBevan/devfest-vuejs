@@ -1,16 +1,12 @@
 <template>
     <div>
-        <h1>{{ title }}</h1> 
+        <h1>Liste des séries</h1> 
     </div>
 </template>
 
 <script>
 export default {
-    data () {
-        return {
-            title: 'Liste des séries'
-        }
-    }
+    
 }
 </script>
 
