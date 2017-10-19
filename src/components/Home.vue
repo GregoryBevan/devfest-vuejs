@@ -43,7 +43,7 @@ export default {
 
 <style scoped>
 #search {
-    padding-bottom: 15px;
+    padding: 10px 50px 0px 50px;
 }
 ul {
     -webkit-padding-start: 0px;
