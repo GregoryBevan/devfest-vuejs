@@ -16,10 +16,12 @@ import Serie from '@/components/Serie.vue'
 export default {
     components: {
         Serie
-    }
+		}
 }
 </script>
 
-<style>
-
+<style scoped>
+	ul {
+		padding: 50px;
+	}
 </style>
