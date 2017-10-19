@@ -47,5 +47,6 @@ export default {
 }
 ul {
     -webkit-padding-start: 0px;
+    padding: 50px;
 }
 </style>
