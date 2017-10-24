@@ -1,6 +1,7 @@
 # devfest-vuejs
 
 > Vue.js codelab @DevFest
+> You can find the slides at the root of the repository => 'vuejs-codelab.pdf'
 
 ## Build Setup
 
